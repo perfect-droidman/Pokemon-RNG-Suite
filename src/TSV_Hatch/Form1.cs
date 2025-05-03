@@ -24,8 +24,23 @@ namespace TSV_Hatch
             bool masuda = chkMasuda.Checked;
             int startFrame = int.Parse(txtFrameStart.Text);
             int endFrame = int.Parse(txtFrameEnd.Text);
+            string seedInput = txtSeed.Text;
 
-            frameGen = new FrameGenerator(tsv, shinyCharm, masuda);
+            uint? seed = null;
+            if (!string.IsNullOrWhiteSpace(seedInput))
+            {
+                if (uint.TryParse(seedInput, System.Globalization.NumberStyles.HexNumber, null, out uint parsedSeed))
+                {
+                    seed = parsedSeed;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid seed. Please enter a valid hexadecimal seed.");
+                    return;
+                }
+            }
+
+            frameGen = new FrameGenerator(tsv, shinyCharm, masuda, seed);
 
             List<FrameData> results = frameGen.GenerateFrames(startFrame, endFrame);
             PopulateFrameViewer(results);
@@ -57,7 +72,7 @@ namespace TSV_Hatch
 
         private void btnReject_Click(object sender, EventArgs e)
         {
-            // Do nothing — stay on same frame
+            // Stay on the same frame
         }
 
         private void btnPlus100_Click(object sender, EventArgs e)

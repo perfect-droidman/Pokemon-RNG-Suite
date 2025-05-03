@@ -20,12 +20,14 @@ namespace TSV_Hatch
         private int TSV;
         private bool ShinyCharm;
         private bool MasudaMethod;
+        private uint? SeedOverride;
 
-        public FrameGenerator(int tsv, bool shinyCharm, bool masudaMethod)
+        public FrameGenerator(int tsv, bool shinyCharm, bool masudaMethod, uint? seed = null)
         {
             TSV = tsv;
             ShinyCharm = shinyCharm;
             MasudaMethod = masudaMethod;
+            SeedOverride = seed;
         }
 
         public List<FrameData> GenerateFrames(int startFrame, int endFrame)
@@ -37,7 +39,9 @@ namespace TSV_Hatch
                 FrameData data = new FrameData();
                 data.Frame = frame;
 
-                Random rng = new Random(frame); // Frame as seed for deterministic results
+                int rngSeed = SeedOverride.HasValue ? (int)(SeedOverride.Value + frame) : frame;
+                Random rng = new Random(rngSeed); // Deterministic per frame
+
                 string pid = rng.Next(0, int.MaxValue).ToString("X8");
                 data.PID = pid;
 
