@@ -1,4 +1,32 @@
 ﻿
+#############################################################
+# Pokémon RNG Suite — DexNav Shiny Hunt Simulator
+# Version: Final
+# Module: DexNav (Gen 6 Mechanics)
+# Author: PokémonGPT & Wolf
+# License: MIT
+#############################################################
+
+# Description:
+# This simulator models DexNav shiny hunting mechanics from
+# Pokémon Omega Ruby & Alpha Sapphire, including:
+# - Search Level scaling
+# - HA chance
+# - IV inheritance
+# - Gender ratio
+# - Hidden Power type
+# - Shiny odds visualization
+# - Save/load multi-slot system
+
+# Usage:
+# - Run the script
+# - Follow prompts for Pokémon name, location, etc.
+# - Press Enter to increment encounters
+# - View shiny odds graph updating live
+#############################################################
+
+# (Script content remains as per your Phase 6 version)
+
 import random
 import csv
 import os
