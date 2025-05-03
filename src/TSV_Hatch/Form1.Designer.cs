@@ -10,6 +10,7 @@ namespace TSV_Hatch
         private System.Windows.Forms.CheckBox chkMasuda;
         private System.Windows.Forms.TextBox txtFrameStart;
         private System.Windows.Forms.TextBox txtFrameEnd;
+        private System.Windows.Forms.TextBox txtSeed; // New seed input
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvFrames;
         private System.Windows.Forms.TextBox txtCurrentFrame;
@@ -34,6 +35,7 @@ namespace TSV_Hatch
             this.chkMasuda = new System.Windows.Forms.CheckBox();
             this.txtFrameStart = new System.Windows.Forms.TextBox();
             this.txtFrameEnd = new System.Windows.Forms.TextBox();
+            this.txtSeed = new System.Windows.Forms.TextBox(); // Seed
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvFrames = new System.Windows.Forms.DataGridView();
             this.txtCurrentFrame = new System.Windows.Forms.TextBox();
@@ -56,6 +58,11 @@ namespace TSV_Hatch
             // Masuda Checkbox
             this.chkMasuda.Location = new System.Drawing.Point(260, 20);
             this.chkMasuda.Text = "Masuda Method";
+
+            // Seed Input
+            this.txtSeed.Location = new System.Drawing.Point(380, 20);
+            this.txtSeed.Size = new System.Drawing.Size(150, 20);
+            this.txtSeed.PlaceholderText = "Seed (optional)";
 
             // Frame Start
             this.txtFrameStart.Location = new System.Drawing.Point(20, 60);
@@ -114,6 +121,7 @@ namespace TSV_Hatch
             this.Controls.Add(this.txtTSV);
             this.Controls.Add(this.chkShinyCharm);
             this.Controls.Add(this.chkMasuda);
+            this.Controls.Add(this.txtSeed);
             this.Controls.Add(this.txtFrameStart);
             this.Controls.Add(this.txtFrameEnd);
             this.Controls.Add(this.btnSearch);
