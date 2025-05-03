@@ -1,4 +1,3 @@
-
 namespace TSV_Hatch
 {
     partial class Form1
@@ -18,6 +17,19 @@ namespace TSV_Hatch
         private System.Windows.Forms.Button btnReject;
         private System.Windows.Forms.Button btnPlus100;
         private System.Windows.Forms.Button btnMinus100;
+        private System.Windows.Forms.CheckBox chkDestinyKnot;
+        private System.Windows.Forms.CheckBox chkEverstoneP1;
+        private System.Windows.Forms.CheckBox chkEverstoneP2;
+
+        private System.Windows.Forms.NumericUpDown[] p1IVs;
+        private System.Windows.Forms.NumericUpDown[] p2IVs;
+
+        private System.Windows.Forms.ComboBox cmbNatureP1;
+        private System.Windows.Forms.ComboBox cmbNatureP2;
+
+        private System.Windows.Forms.ComboBox cmbAbilityP1;
+        private System.Windows.Forms.ComboBox cmbAbilityP2;
+
 
         protected override void Dispose(bool disposing)
         {
@@ -116,6 +128,88 @@ namespace TSV_Hatch
             this.btnMinus100.Text = "-100";
             this.btnMinus100.Click += new System.EventHandler(this.btnMinus100_Click);
 
+            // Destiny Knot and Everstones
+            this.chkDestinyKnot = new System.Windows.Forms.CheckBox();
+            this.chkDestinyKnot.Text = "Destiny Knot";
+            this.chkDestinyKnot.Location = new System.Drawing.Point(600, 20);
+            this.Controls.Add(this.chkDestinyKnot);
+
+            this.chkEverstoneP1 = new System.Windows.Forms.CheckBox();
+            this.chkEverstoneP1.Text = "Everstone P1";
+            this.chkEverstoneP1.Location = new System.Drawing.Point(600, 50);
+            this.Controls.Add(this.chkEverstoneP1);
+
+            this.chkEverstoneP2 = new System.Windows.Forms.CheckBox();
+            this.chkEverstoneP2.Text = "Everstone P2";
+            this.chkEverstoneP2.Location = new System.Drawing.Point(700, 50);
+            this.Controls.Add(this.chkEverstoneP2);
+
+            // Parent 1 IVs
+            this.p1IVs = new System.Windows.Forms.NumericUpDown[6];
+            string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
+
+            Label lblP1 = new Label();
+            lblP1.Text = "Parent 1 IVs:";
+            lblP1.Location = new System.Drawing.Point(20, 400);
+            this.Controls.Add(lblP1);
+
+            for (int i = 0; i < 6; i++)
+            {
+                this.p1IVs[i] = new System.Windows.Forms.NumericUpDown();
+                this.p1IVs[i].Minimum = 0;
+                this.p1IVs[i].Maximum = 31;
+                this.p1IVs[i].Location = new System.Drawing.Point(100 + i * 60, 400);
+                this.Controls.Add(this.p1IVs[i]);
+            }
+
+            // Parent 2 IVs
+            this.p2IVs = new System.Windows.Forms.NumericUpDown[6];
+
+            Label lblP2 = new Label();
+            lblP2.Text = "Parent 2 IVs:";
+            lblP2.Location = new System.Drawing.Point(20, 430);
+            this.Controls.Add(lblP2);
+
+            for (int i = 0; i < 6; i++)
+            {
+                this.p2IVs[i] = new System.Windows.Forms.NumericUpDown();
+                this.p2IVs[i].Minimum = 0;
+                this.p2IVs[i].Maximum = 31;
+                this.p2IVs[i].Location = new System.Drawing.Point(100 + i * 60, 430);
+                this.Controls.Add(this.p2IVs[i]);
+            }
+
+            // Parent 1 Nature
+            this.cmbNatureP1 = new System.Windows.Forms.ComboBox();
+            this.cmbNatureP1.Location = new System.Drawing.Point(20, 460);
+            this.cmbNatureP1.Items.AddRange(new string[] {
+                "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
+                "Bold", "Docile", "Relaxed", "Impish", "Lax",
+                "Timid", "Hasty", "Serious", "Jolly", "Naive",
+                "Modest", "Mild", "Quiet", "Bashful", "Rash",
+                "Calm", "Gentle", "Sassy", "Careful", "Quirky"
+            });
+            this.Controls.Add(this.cmbNatureP1);
+
+            // Parent 2 Nature
+            this.cmbNatureP2 = new System.Windows.Forms.ComboBox();
+            this.cmbNatureP2.Location = new System.Drawing.Point(180, 460);
+            this.cmbNatureP2.Items.AddRange(this.cmbNatureP1.Items);
+            this.Controls.Add(this.cmbNatureP2);
+
+            // Parent 1 Ability
+            this.cmbAbilityP1 = new System.Windows.Forms.ComboBox();
+            this.cmbAbilityP1.Location = new System.Drawing.Point(20, 490);
+            this.cmbAbilityP1.Items.AddRange(new string[] { "Ability 1", "Ability 2", "Hidden Ability" });
+            this.Controls.Add(this.cmbAbilityP1);
+
+            // Parent 2 Ability
+            this.cmbAbilityP2 = new System.Windows.Forms.ComboBox();
+            this.cmbAbilityP2.Location = new System.Drawing.Point(180, 490);
+            this.cmbAbilityP2.Items.AddRange(new string[] { "Ability 1", "Ability 2", "Hidden Ability" });
+            this.Controls.Add(this.cmbAbilityP2);
+
+
             // Form Settings
             this.ClientSize = new System.Drawing.Size(800, 420);
             this.Controls.Add(this.txtTSV);
@@ -132,6 +226,9 @@ namespace TSV_Hatch
             this.Controls.Add(this.btnPlus100);
             this.Controls.Add(this.btnMinus100);
             this.Text = "Pokémon RNG Suite — TSV Hatch Simulator";
+
+            
+
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrames)).EndInit();
             this.ResumeLayout(false);
