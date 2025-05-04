@@ -92,6 +92,7 @@ namespace TSV_Hatch
             // ====== Start Frame TextBox ======
             this.txtStartFrame.Location = new System.Drawing.Point(20, 70);
             this.txtStartFrame.Size = new System.Drawing.Size(80, 20);
+            this.Controls.Add(this.txtStartFrame);
 
             // ====== End Frame Label ======
             Label lblEndFrame = new Label();
@@ -103,6 +104,7 @@ namespace TSV_Hatch
             // ====== End Frame TextBox ======
             this.txtEndFrame.Location = new System.Drawing.Point(120, 70);
             this.txtEndFrame.Size = new System.Drawing.Size(80, 20);
+            this.Controls.Add(this.txtEndFrame);
 
             // Search Button
             this.btnSearch.Location = new System.Drawing.Point(400, 60);
@@ -164,8 +166,6 @@ namespace TSV_Hatch
             lblP1.Text = "Parent 1 IVs:";
             lblP1.Location = new System.Drawing.Point(20, 460);
             this.Controls.Add(lblP1);
-
-            string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
 
             this.p1IVs = new NumericUpDown[6];
 

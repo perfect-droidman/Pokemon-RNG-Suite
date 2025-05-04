@@ -9,6 +9,7 @@ namespace TSV_Hatch
     {
         private FrameGenerator frameGen;
         private int currentFrame;
+        private readonly string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
 
         public Form1()
         {
