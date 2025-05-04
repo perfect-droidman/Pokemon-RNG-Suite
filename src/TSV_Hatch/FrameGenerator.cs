@@ -6,11 +6,13 @@ namespace TSV_Hatch
 {
     public class FrameData
     {
+        public int FrameNumber { get; set; }
         public int Frame { get; set; }
-        public int ESV { get; set; }
         public bool IsTSVShiny { get; set; }
+        public int ESV { get; set; }
+        public bool IsShiny { get; set; }
         public string Gender { get; set; }
-        public int Ability { get; set; }
+        public string Ability { get; set; }
         public string HPType { get; set; }
         public string PID { get; set; }
         public int[] IVs { get; set; }
@@ -77,7 +79,7 @@ namespace TSV_Hatch
                 data.IsTSVShiny = (esv == TSV);
 
                 data.Gender = (rng.NextDouble() > 0.5) ? "Male" : "Female";
-                data.Ability = (rng.NextDouble() > 0.5) ? 1 : 2;
+                data.Ability = (rng.NextDouble() > 0.5) ? "Ability 1" : "Ability 2";
                 data.HPType = "Dark"; // Placeholder
 
                 // 1. Determine inherited IVs

@@ -13,8 +13,8 @@ namespace TSV_Hatch
         private System.Windows.Forms.TextBox txtTSV;
         private System.Windows.Forms.CheckBox chkShinyCharm;
         private System.Windows.Forms.CheckBox chkMasuda;
-        private System.Windows.Forms.TextBox txtFrameStart;
-        private System.Windows.Forms.TextBox txtFrameEnd;
+        private System.Windows.Forms.TextBox txtStartFrame;
+        private System.Windows.Forms.TextBox txtEndFrame;
         private System.Windows.Forms.TextBox txtSeed; // New seed input
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvFrames;
@@ -50,8 +50,8 @@ namespace TSV_Hatch
             this.txtTSV = new System.Windows.Forms.TextBox();
             this.chkShinyCharm = new System.Windows.Forms.CheckBox();
             this.chkMasuda = new System.Windows.Forms.CheckBox();
-            this.txtFrameStart = new System.Windows.Forms.TextBox();
-            this.txtFrameEnd = new System.Windows.Forms.TextBox();
+            this.txtStartFrame = new System.Windows.Forms.TextBox();
+            this.txtEndFrame = new System.Windows.Forms.TextBox();
             this.txtSeed = new System.Windows.Forms.TextBox(); // Seed
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvFrames = new System.Windows.Forms.DataGridView();
@@ -81,15 +81,30 @@ namespace TSV_Hatch
             this.txtSeed.Size = new System.Drawing.Size(150, 20);
             this.txtSeed.PlaceholderText = "Seed (optional)";
 
-            // Frame Start
-            this.txtFrameStart.Location = new System.Drawing.Point(20, 60);
-            this.txtFrameStart.Size = new System.Drawing.Size(100, 20);
-            this.txtFrameStart.PlaceholderText = "Start Frame";
+            // Start Frame TextBox
+            this.txtStartFrame = new TextBox();
+            this.txtStartFrame.Location = new System.Drawing.Point(100, 50);
+            this.txtStartFrame.Size = new System.Drawing.Size(80, 20);
+            this.Controls.Add(this.txtStartFrame);
 
-            // Frame End
-            this.txtFrameEnd.Location = new System.Drawing.Point(140, 60);
-            this.txtFrameEnd.Size = new System.Drawing.Size(100, 20);
-            this.txtFrameEnd.PlaceholderText = "End Frame";
+            Label lblStart = new Label();
+            lblStart.Text = "Start Frame:";
+            lblStart.Location = new System.Drawing.Point(20, 50);
+            lblStart.Font = new Font("Segoe UI", 8F);
+            this.Controls.Add(lblStart);
+
+            // End Frame TextBox
+            this.txtEndFrame = new TextBox();
+            this.txtEndFrame.Location = new System.Drawing.Point(250, 50);
+            this.txtEndFrame.Size = new System.Drawing.Size(80, 20);
+            this.Controls.Add(this.txtEndFrame);
+
+            Label lblEnd = new Label();
+            lblEnd.Text = "End Frame:";
+            lblEnd.Location = new System.Drawing.Point(180, 50);
+            lblEnd.Font = new Font("Segoe UI", 8F);
+            this.Controls.Add(lblEnd);
+
 
             // Search Button
             this.btnSearch.Location = new System.Drawing.Point(260, 60);

@@ -121,5 +121,24 @@ namespace TSV_Hatch
                 );
             }
         }
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            // TODO: Implement frame accept logic
+        }
+
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+            // TODO: Implement frame reject logic
+        }
+
+        private void btnPlus100_Click(object sender, EventArgs e)
+        {
+            // TODO: Implement +100 frame shift
+        }
+
+        private void btnMinus100_Click(object sender, EventArgs e)
+        {
+            // TODO: Implement -100 frame shift
+        }
     }
 }
