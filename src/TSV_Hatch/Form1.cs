@@ -40,7 +40,35 @@ namespace TSV_Hatch
                 }
             }
 
-            frameGen = new FrameGenerator(tsv, shinyCharm, masuda, seed);
+            // Collect parent IVs from the NumericUpDown controls
+            int[] parent1IVs = new int[6];
+            int[] parent2IVs = new int[6];
+
+            for (int i = 0; i < 6; i++)
+            {
+                parent1IVs[i] = (int)p1IVs[i].Value;
+                parent2IVs[i] = (int)p2IVs[i].Value;
+            }
+
+            // Collect breeding items and natures
+            bool destinyKnot = chkDestinyKnot.Checked;
+            bool everstoneP1 = chkEverstoneP1.Checked;
+            bool everstoneP2 = chkEverstoneP2.Checked;
+            string natureP1 = cmbNatureP1.SelectedItem?.ToString() ?? "Hardy";
+            string natureP2 = cmbNatureP2.SelectedItem?.ToString() ?? "Hardy";
+
+            frameGen = new FrameGenerator(
+                tsv,
+                shinyCharm,
+                masuda,
+                seed,
+                parent1IVs,
+                parent2IVs,
+                destinyKnot,
+                everstoneP1,
+                everstoneP2,
+                natureP1,
+                natureP2);
 
             List<FrameData> results = frameGen.GenerateFrames(startFrame, endFrame);
             PopulateFrameViewer(results);
