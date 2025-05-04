@@ -23,9 +23,8 @@ namespace TSV_Hatch
         private System.Windows.Forms.Button btnReject;
         private System.Windows.Forms.Button btnPlus100;
         private System.Windows.Forms.Button btnMinus100;
-        private System.Windows.Forms.CheckBox chkDestinyKnot;
-        private System.Windows.Forms.CheckBox chkEverstoneP1;
-        private System.Windows.Forms.CheckBox chkEverstoneP2;
+        private System.Windows.Forms.ComboBox cmbItemP1;
+        private System.Windows.Forms.ComboBox cmbItemP2;
 
         private System.Windows.Forms.NumericUpDown[] p1IVs;
         private System.Windows.Forms.NumericUpDown[] p2IVs;
@@ -115,40 +114,36 @@ namespace TSV_Hatch
             this.txtCurrentFrame.Text = "0";
 
             // Accept Button
-            this.btnAccept.Location = new System.Drawing.Point(140, 370);
+            this.btnAccept = new Button();
             this.btnAccept.Text = "Accept";
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            this.btnAccept.Location = new System.Drawing.Point(780, 100);
+            this.btnAccept.Size = new System.Drawing.Size(80, 30);
+            this.btnAccept.Click += new EventHandler(this.btnAccept_Click);
+            this.Controls.Add(this.btnAccept);
 
             // Reject Button
-            this.btnReject.Location = new System.Drawing.Point(240, 370);
+            this.btnReject = new Button();
             this.btnReject.Text = "Reject";
-            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
+            this.btnReject.Location = new System.Drawing.Point(780, 140);
+            this.btnReject.Size = new System.Drawing.Size(80, 30);
+            this.btnReject.Click += new EventHandler(this.btnReject_Click);
+            this.Controls.Add(this.btnReject);
 
-            // Plus 100 Frame Button
-            this.btnPlus100.Location = new System.Drawing.Point(340, 370);
+            // +100 Frame Button
+            this.btnPlus100 = new Button();
             this.btnPlus100.Text = "+100";
-            this.btnPlus100.Click += new System.EventHandler(this.btnPlus100_Click);
+            this.btnPlus100.Location = new System.Drawing.Point(780, 180);
+            this.btnPlus100.Size = new System.Drawing.Size(80, 30);
+            this.btnPlus100.Click += new EventHandler(this.btnPlus100_Click);
+            this.Controls.Add(this.btnPlus100);
 
-            // Minus 100 Frame Button
-            this.btnMinus100.Location = new System.Drawing.Point(440, 370);
+            // -100 Frame Button
+            this.btnMinus100 = new Button();
             this.btnMinus100.Text = "-100";
-            this.btnMinus100.Click += new System.EventHandler(this.btnMinus100_Click);
-
-            // Destiny Knot and Everstones
-            this.chkDestinyKnot = new System.Windows.Forms.CheckBox();
-            this.chkDestinyKnot.Text = "Destiny Knot";
-            this.chkDestinyKnot.Location = new System.Drawing.Point(600, 20);
-            this.Controls.Add(this.chkDestinyKnot);
-
-            this.chkEverstoneP1 = new System.Windows.Forms.CheckBox();
-            this.chkEverstoneP1.Text = "Everstone P1";
-            this.chkEverstoneP1.Location = new System.Drawing.Point(600, 50);
-            this.Controls.Add(this.chkEverstoneP1);
-
-            this.chkEverstoneP2 = new System.Windows.Forms.CheckBox();
-            this.chkEverstoneP2.Text = "Everstone P2";
-            this.chkEverstoneP2.Location = new System.Drawing.Point(700, 50);
-            this.Controls.Add(this.chkEverstoneP2);
+            this.btnMinus100.Location = new System.Drawing.Point(780, 220);
+            this.btnMinus100.Size = new System.Drawing.Size(80, 30);
+            this.btnMinus100.Click += new EventHandler(this.btnMinus100_Click);
+            this.Controls.Add(this.btnMinus100);
 
             // ====== Parent 1 IVs ======
 
@@ -166,14 +161,14 @@ namespace TSV_Hatch
                 Label statLabel = new Label();
                 statLabel.Text = stats[i];
                 statLabel.Font = new Font("Segoe UI", 8F, FontStyle.Regular);  // Smaller font
-                statLabel.Location = new System.Drawing.Point(20, 485 + i * 25);
+                statLabel.Location = new System.Drawing.Point(200, 485 + i * 20);
                 this.Controls.Add(statLabel);
 
                 this.p1IVs[i] = new NumericUpDown();
                 this.p1IVs[i].Minimum = 0;
                 this.p1IVs[i].Maximum = 31;
                 this.p1IVs[i].Size = new System.Drawing.Size(60, 20);  // Wider so values are visible
-                this.p1IVs[i].Location = new System.Drawing.Point(100, 485 + i * 25);  // More gap from label
+                this.p1IVs[i].Location = new System.Drawing.Point(100, 485 + i * 20);  // More gap from label
                 this.Controls.Add(this.p1IVs[i]);
             }
 
@@ -191,14 +186,14 @@ namespace TSV_Hatch
                 Label statLabel = new Label();
                 statLabel.Text = stats[i];
                 statLabel.Font = new Font("Segoe UI", 8F, FontStyle.Regular);  // Smaller font
-                statLabel.Location = new System.Drawing.Point(220, 485 + i * 25);
+                statLabel.Location = new System.Drawing.Point(20, 485 + i * 20);
                 this.Controls.Add(statLabel);
 
                 this.p2IVs[i] = new NumericUpDown();
                 this.p2IVs[i].Minimum = 0;
                 this.p2IVs[i].Maximum = 31;
                 this.p2IVs[i].Size = new System.Drawing.Size(60, 20);
-                this.p2IVs[i].Location = new System.Drawing.Point(300, 485 + i * 25);
+                this.p2IVs[i].Location = new System.Drawing.Point(300, 485 + i * 20);
                 this.Controls.Add(this.p2IVs[i]);
             }
 
@@ -216,20 +211,20 @@ namespace TSV_Hatch
             Label lblNatureP1 = new Label();
             lblNatureP1.Text = "Nature P1:";
             lblNatureP1.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
-            lblNatureP1.Location = new System.Drawing.Point(20, 640);
+            lblNatureP1.Location = new System.Drawing.Point(0, 640);
             this.Controls.Add(lblNatureP1);
 
             Label lblNatureP2 = new Label();
             lblNatureP2.Text = "Nature P2:";
             lblNatureP2.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
-            lblNatureP2.Location = new System.Drawing.Point(220, 640);
+            lblNatureP2.Location = new System.Drawing.Point(200, 640);
             this.Controls.Add(lblNatureP2);
 
             // Nature ComboBoxes
             this.cmbNatureP1.Location = new System.Drawing.Point(100, 635);
             this.cmbNatureP2.Location = new System.Drawing.Point(300, 635);
-            this.cmbNatureP1.Size = new System.Drawing.Size(140, 25);
-            this.cmbNatureP2.Size = new System.Drawing.Size(140, 25);
+            this.cmbNatureP1.Size = new System.Drawing.Size(100, 25);
+            this.cmbNatureP2.Size = new System.Drawing.Size(100, 25);
 
             string[] natures = new string[] {
                 "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
@@ -250,20 +245,20 @@ namespace TSV_Hatch
             Label lblAbilityP1 = new Label();
             lblAbilityP1.Text = "Ability P1:";
             lblAbilityP1.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
-            lblAbilityP1.Location = new System.Drawing.Point(20, 670);
+            lblAbilityP1.Location = new System.Drawing.Point(0, 670);
             this.Controls.Add(lblAbilityP1);
 
             Label lblAbilityP2 = new Label();
             lblAbilityP2.Text = "Ability P2:";
             lblAbilityP2.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
-            lblAbilityP2.Location = new System.Drawing.Point(220, 670);
+            lblAbilityP2.Location = new System.Drawing.Point(200, 670);
             this.Controls.Add(lblAbilityP2);
 
             // Ability ComboBoxes
             this.cmbAbilityP1.Location = new System.Drawing.Point(100, 665);
             this.cmbAbilityP2.Location = new System.Drawing.Point(300, 665);
-            this.cmbAbilityP1.Size = new System.Drawing.Size(140, 25);
-            this.cmbAbilityP2.Size = new System.Drawing.Size(140, 25);
+            this.cmbAbilityP1.Size = new System.Drawing.Size(100, 25);
+            this.cmbAbilityP2.Size = new System.Drawing.Size(100, 25);
 
             string[] abilities = new string[] { "Ability 1", "Ability 2", "Hidden Ability" };
 
@@ -273,9 +268,40 @@ namespace TSV_Hatch
             this.Controls.Add(this.cmbAbilityP1);
             this.Controls.Add(this.cmbAbilityP2);
 
+            // ====== Item Dropdowns ======
+
+            // Item P1 ComboBox
+            this.cmbItemP1 = new ComboBox();
+            this.cmbItemP1.Location = new System.Drawing.Point(100, 730);
+            this.cmbItemP1.Size = new System.Drawing.Size(140, 25);
+            this.cmbItemP1.Items.AddRange(new string[] { "None", "Everstone", "Destiny Knot" });
+            this.cmbItemP1.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.Controls.Add(this.cmbItemP1);
+
+            // Item P2 ComboBox
+            this.cmbItemP2 = new ComboBox();
+            this.cmbItemP2.Location = new System.Drawing.Point(300, 730);
+            this.cmbItemP2.Size = new System.Drawing.Size(140, 25);
+            this.cmbItemP2.Items.AddRange(new string[] { "None", "Everstone", "Destiny Knot" });
+            this.cmbItemP2.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.Controls.Add(this.cmbItemP2);
+
+            // Labels for clarity
+            Label lblItemP1 = new Label();
+            lblItemP1.Text = "Item P1:";
+            lblItemP1.Font = new Font("Segoe UI", 8F);
+            lblItemP1.Location = new System.Drawing.Point(20, 735);
+            this.Controls.Add(lblItemP1);
+
+            Label lblItemP2 = new Label();
+            lblItemP2.Text = "Item P2:";
+            lblItemP2.Font = new Font("Segoe UI", 8F);
+            lblItemP2.Location = new System.Drawing.Point(220, 735);
+            this.Controls.Add(lblItemP2);
+
 
             // Form Settings
-            this.ClientSize = new System.Drawing.Size(900, 750);
+            this.ClientSize = new System.Drawing.Size(900, 800);
             this.Controls.Add(this.txtTSV);
             this.Controls.Add(this.chkShinyCharm);
             this.Controls.Add(this.chkMasuda);
