@@ -34,7 +34,8 @@ namespace TSV_Hatch
 
         private System.Windows.Forms.ComboBox cmbAbilityP1;
         private System.Windows.Forms.ComboBox cmbAbilityP2;
-
+        private Control txtFrameStart;
+        private Control txtFrameEnd;
 
         protected override void Dispose(bool disposing)
         {
@@ -81,33 +82,30 @@ namespace TSV_Hatch
             this.txtSeed.Size = new System.Drawing.Size(150, 20);
             this.txtSeed.PlaceholderText = "Seed (optional)";
 
-            // Start Frame TextBox
-            this.txtStartFrame = new TextBox();
-            this.txtStartFrame.Location = new System.Drawing.Point(100, 50);
+            // ====== Start Frame Label ======
+            Label lblStartFrame = new Label();
+            lblStartFrame.Text = "Start Frame:";
+            lblStartFrame.Location = new System.Drawing.Point(20, 50);
+            lblStartFrame.AutoSize = true;
+            this.Controls.Add(lblStartFrame);
+
+            // ====== Start Frame TextBox ======
+            this.txtStartFrame.Location = new System.Drawing.Point(20, 70);
             this.txtStartFrame.Size = new System.Drawing.Size(80, 20);
-            this.Controls.Add(this.txtStartFrame);
 
-            Label lblStart = new Label();
-            lblStart.Text = "Start Frame:";
-            lblStart.Location = new System.Drawing.Point(20, 50);
-            lblStart.Font = new Font("Segoe UI", 8F);
-            this.Controls.Add(lblStart);
+            // ====== End Frame Label ======
+            Label lblEndFrame = new Label();
+            lblEndFrame.Text = "End Frame:";
+            lblEndFrame.Location = new System.Drawing.Point(120, 50);
+            lblEndFrame.AutoSize = true;
+            this.Controls.Add(lblEndFrame);
 
-            // End Frame TextBox
-            this.txtEndFrame = new TextBox();
-            this.txtEndFrame.Location = new System.Drawing.Point(250, 50);
+            // ====== End Frame TextBox ======
+            this.txtEndFrame.Location = new System.Drawing.Point(120, 70);
             this.txtEndFrame.Size = new System.Drawing.Size(80, 20);
-            this.Controls.Add(this.txtEndFrame);
-
-            Label lblEnd = new Label();
-            lblEnd.Text = "End Frame:";
-            lblEnd.Location = new System.Drawing.Point(180, 50);
-            lblEnd.Font = new Font("Segoe UI", 8F);
-            this.Controls.Add(lblEnd);
-
 
             // Search Button
-            this.btnSearch.Location = new System.Drawing.Point(260, 60);
+            this.btnSearch.Location = new System.Drawing.Point(400, 60);
             this.btnSearch.Text = "Search";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 
@@ -301,19 +299,27 @@ namespace TSV_Hatch
             this.cmbItemP2.DropDownStyle = ComboBoxStyle.DropDownList;
             this.Controls.Add(this.cmbItemP2);
 
-            // Labels for clarity
+            // ====== Item P1 Label ======
             Label lblItemP1 = new Label();
             lblItemP1.Text = "Item P1:";
-            lblItemP1.Font = new Font("Segoe UI", 8F);
-            lblItemP1.Location = new System.Drawing.Point(20, 735);
+            lblItemP1.Location = new System.Drawing.Point(20, 750);
+            lblItemP1.AutoSize = true;
             this.Controls.Add(lblItemP1);
 
+            // ====== Item P1 ComboBox ======
+            this.cmbItemP1.Location = new System.Drawing.Point(20, 770);
+            this.cmbItemP1.Size = new System.Drawing.Size(140, 25);
+
+            // ====== Item P2 Label ======
             Label lblItemP2 = new Label();
             lblItemP2.Text = "Item P2:";
-            lblItemP2.Font = new Font("Segoe UI", 8F);
-            lblItemP2.Location = new System.Drawing.Point(220, 735);
+            lblItemP2.Location = new System.Drawing.Point(180, 750);
+            lblItemP2.AutoSize = true;
             this.Controls.Add(lblItemP2);
 
+            // ====== Item P2 ComboBox ======
+            this.cmbItemP2.Location = new System.Drawing.Point(180, 770);
+            this.cmbItemP2.Size = new System.Drawing.Size(140, 25);
 
             // Form Settings
             this.ClientSize = new System.Drawing.Size(900, 800);
