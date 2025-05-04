@@ -200,17 +200,16 @@ namespace TSV_Hatch
             // Parent 1 Nature
             // Nature Labels and ComboBoxes
             Label lblNatureP1 = new Label();
-            this.cmbNatureP1 = new ComboBox();
-
             lblNatureP1.Text = "Nature P1:";
+            this.cmbNatureP1 = new ComboBox();
             lblNatureP1.Location = new System.Drawing.Point(20, 640);
             this.Controls.Add(lblNatureP1);
 
             this.cmbNatureP1.Location = new System.Drawing.Point(90, 635);
 
             Label lblNatureP2 = new Label();
-            this.cmbNatureP2 = new ComboBox();
             lblNatureP2.Text = "Nature P2:";
+            this.cmbNatureP2 = new ComboBox();
             lblNatureP2.Location = new System.Drawing.Point(200, 640);
             this.Controls.Add(lblNatureP2);
 
@@ -219,6 +218,7 @@ namespace TSV_Hatch
             // Ability Labels and ComboBoxes
             Label lblAbilityP1 = new Label();
             lblAbilityP1.Text = "Ability P1:";
+            this.cmbAbilityP1 = new ComboBox();
             lblAbilityP1.Location = new System.Drawing.Point(20, 670);
             this.Controls.Add(lblAbilityP1);
 
@@ -226,6 +226,7 @@ namespace TSV_Hatch
 
             Label lblAbilityP2 = new Label();
             lblAbilityP2.Text = "Ability P2:";
+            this.cmbAbilityP2 = new ComboBox();
             lblAbilityP2.Location = new System.Drawing.Point(200, 670);
             this.Controls.Add(lblAbilityP2);
 
