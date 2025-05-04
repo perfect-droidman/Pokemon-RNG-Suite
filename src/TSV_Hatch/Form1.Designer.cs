@@ -156,7 +156,7 @@ namespace TSV_Hatch
 
             Label lblP1 = new Label();
             lblP1.Text = "Parent 1 IVs:";
-            lblP1.Location = new System.Drawing.Point(20, 400);
+            lblP1.Location = new System.Drawing.Point(20, 460);
             this.Controls.Add(lblP1);
 
             for (int i = 0; i < 6; i++)
@@ -173,7 +173,7 @@ namespace TSV_Hatch
 
             Label lblP2 = new Label();
             lblP2.Text = "Parent 2 IVs:";
-            lblP2.Location = new System.Drawing.Point(20, 430);
+            lblP2.Location = new System.Drawing.Point(20, 500);
             this.Controls.Add(lblP2);
 
             for (int i = 0; i < 6; i++)
@@ -187,7 +187,7 @@ namespace TSV_Hatch
 
             // Parent 1 Nature
             this.cmbNatureP1 = new System.Windows.Forms.ComboBox();
-            this.cmbNatureP1.Location = new System.Drawing.Point(20, 460);
+            this.cmbNatureP1.Location = new System.Drawing.Point(20, 540);
             this.cmbNatureP1.Items.AddRange(new string[] {
                 "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
                 "Bold", "Docile", "Relaxed", "Impish", "Lax",
@@ -199,7 +199,7 @@ namespace TSV_Hatch
 
             // Parent 2 Nature
             this.cmbNatureP2 = new System.Windows.Forms.ComboBox();
-            this.cmbNatureP2.Location = new System.Drawing.Point(180, 460);
+            this.cmbNatureP2.Location = new System.Drawing.Point(180, 540);
             object[] natureArray = new object[this.cmbNatureP1.Items.Count];
             this.cmbNatureP1.Items.CopyTo(natureArray, 0);
             this.cmbNatureP2.Items.AddRange(natureArray);
@@ -207,19 +207,19 @@ namespace TSV_Hatch
 
             // Parent 1 Ability
             this.cmbAbilityP1 = new System.Windows.Forms.ComboBox();
-            this.cmbAbilityP1.Location = new System.Drawing.Point(20, 490);
+            this.cmbAbilityP1.Location = new System.Drawing.Point(20, 580);
             this.cmbAbilityP1.Items.AddRange(new string[] { "Ability 1", "Ability 2", "Hidden Ability" });
             this.Controls.Add(this.cmbAbilityP1);
 
             // Parent 2 Ability
             this.cmbAbilityP2 = new System.Windows.Forms.ComboBox();
-            this.cmbAbilityP2.Location = new System.Drawing.Point(180, 490);
+            this.cmbAbilityP2.Location = new System.Drawing.Point(180, 580);
             this.cmbAbilityP2.Items.AddRange(new string[] { "Ability 1", "Ability 2", "Hidden Ability" });
             this.Controls.Add(this.cmbAbilityP2);
 
 
             // Form Settings
-            this.ClientSize = new System.Drawing.Size(800, 420);
+            this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.txtTSV);
             this.Controls.Add(this.chkShinyCharm);
             this.Controls.Add(this.chkMasuda);
@@ -234,9 +234,6 @@ namespace TSV_Hatch
             this.Controls.Add(this.btnPlus100);
             this.Controls.Add(this.btnMinus100);
             this.Text = "Pokémon RNG Suite — TSV Hatch Simulator";
-
-            
-
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrames)).EndInit();
             this.ResumeLayout(false);
