@@ -1,14 +1,42 @@
-# Ensure consistent line endings
+#######################################
+# Pokémon RNG Suite — .gitattributes
+#######################################
+
+# === C# Source Files ===
 *.cs text eol=crlf
 *.designer.cs text eol=crlf
+*.csproj text eol=crlf
 *.config text eol=crlf
+*.sln text eol=crlf
+
+# === Markdown / Documentation ===
 *.md text eol=lf
 
-# Optional: treat all text files as text (useful if you have mixed text files)
+# === JSON / XML / YAML ===
+*.json text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# === Scripts ===
+*.sh text eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# === Default behavior for text files ===
 * text=auto
 
-# Exclude binaries from text normalization
+# === Binary Files (no EOL conversion) ===
 *.png binary
 *.jpg binary
+*.jpeg binary
+*.gif binary
 *.exe binary
 *.dll binary
+*.pdf binary
+*.zip binary
+*.7z binary
+
+#######################################
+# End of file
+#######################################
