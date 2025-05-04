@@ -1,5 +1,5 @@
 
-<Project Sdk="Microsoft.NET.Sdk.System.Windows.Forms">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
