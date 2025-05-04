@@ -27,8 +27,8 @@ namespace TSV_Hatch
         private System.Windows.Forms.CheckBox chkEverstoneP1;
         private System.Windows.Forms.CheckBox chkEverstoneP2;
 
-        private System.Windows.Forms.NumericUpDown[6];
-        private System.Windows.Forms.NumericUpDown[6];
+        private System.Windows.Forms.NumericUpDown p1IVs;
+        private System.Windows.Forms.NumericUpDown p2IVs;
 
         private System.Windows.Forms.ComboBox cmbNatureP1;
         private System.Windows.Forms.ComboBox cmbNatureP2;
