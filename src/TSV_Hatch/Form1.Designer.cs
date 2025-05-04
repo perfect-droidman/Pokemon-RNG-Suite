@@ -171,7 +171,7 @@ namespace TSV_Hatch
                 this.p1IVs[i] = new NumericUpDown();
                 this.p1IVs[i].Minimum = 0;
                 this.p1IVs[i].Maximum = 31;
-                this.p1IVs[i].Size = new System.Drawing.Size(40, 20); // Narrow width
+                this.p1IVs[i].Size = new System.Drawing.Size(120, 20); // Narrow width
                 this.p1IVs[i].Location = new System.Drawing.Point(70, 485 + i * 25);
                 this.Controls.Add(this.p1IVs[i]);
             }
@@ -195,7 +195,7 @@ namespace TSV_Hatch
                 this.p2IVs[i] = new NumericUpDown();
                 this.p2IVs[i].Minimum = 0;
                 this.p2IVs[i].Maximum = 31;
-                this.p2IVs[i].Size = new System.Drawing.Size(40, 20);
+                this.p2IVs[i].Size = new System.Drawing.Size(120, 20);
                 this.p2IVs[i].Location = new System.Drawing.Point(250, 485 + i * 25);
                 this.Controls.Add(this.p2IVs[i]);
             }
