@@ -151,75 +151,80 @@ namespace TSV_Hatch
             this.Controls.Add(this.chkEverstoneP2);
 
             // Parent 1 IVs
-            this.p1IVs = new System.Windows.Forms.NumericUpDown[6];
-            string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
-
             Label lblP1 = new Label();
             lblP1.Text = "Parent 1 IVs:";
             lblP1.Location = new System.Drawing.Point(20, 460);
             this.Controls.Add(lblP1);
 
+            string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
             for (int i = 0; i < 6; i++)
             {
-                this.p1IVs[i] = new System.Windows.Forms.NumericUpDown();
+                Label statLabel = new Label();
+                statLabel.Text = stats[i];
+                statLabel.Location = new System.Drawing.Point(20, 485 + i * 25);
+                this.Controls.Add(statLabel);
+
+                this.p1IVs[i] = new NumericUpDown();
                 this.p1IVs[i].Minimum = 0;
                 this.p1IVs[i].Maximum = 31;
-                this.p1IVs[i].Location = new System.Drawing.Point(100 + i * 60, 400);
+                this.p1IVs[i].Location = new System.Drawing.Point(70, 485 + i * 25);
                 this.Controls.Add(this.p1IVs[i]);
             }
 
             // Parent 2 IVs
-            this.p2IVs = new System.Windows.Forms.NumericUpDown[6];
-
             Label lblP2 = new Label();
             lblP2.Text = "Parent 2 IVs:";
-            lblP2.Location = new System.Drawing.Point(20, 500);
+            lblP2.Location = new System.Drawing.Point(200, 460);
             this.Controls.Add(lblP2);
 
             for (int i = 0; i < 6; i++)
             {
-                this.p2IVs[i] = new System.Windows.Forms.NumericUpDown();
+                Label statLabel = new Label();
+                statLabel.Text = stats[i];
+                statLabel.Location = new System.Drawing.Point(200, 485 + i * 25);
+                this.Controls.Add(statLabel);
+
+                this.p2IVs[i] = new NumericUpDown();
                 this.p2IVs[i].Minimum = 0;
                 this.p2IVs[i].Maximum = 31;
-                this.p2IVs[i].Location = new System.Drawing.Point(100 + i * 60, 430);
+                this.p2IVs[i].Location = new System.Drawing.Point(250, 485 + i * 25);
                 this.Controls.Add(this.p2IVs[i]);
             }
 
+
             // Parent 1 Nature
-            this.cmbNatureP1 = new System.Windows.Forms.ComboBox();
-            this.cmbNatureP1.Location = new System.Drawing.Point(20, 540);
-            this.cmbNatureP1.Items.AddRange(new string[] {
-                "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
-                "Bold", "Docile", "Relaxed", "Impish", "Lax",
-                "Timid", "Hasty", "Serious", "Jolly", "Naive",
-                "Modest", "Mild", "Quiet", "Bashful", "Rash",
-                "Calm", "Gentle", "Sassy", "Careful", "Quirky"
-            });
-            this.Controls.Add(this.cmbNatureP1);
+            // Nature Labels and ComboBoxes
+            Label lblNatureP1 = new Label();
+            lblNatureP1.Text = "Nature P1:";
+            lblNatureP1.Location = new System.Drawing.Point(20, 640);
+            this.Controls.Add(lblNatureP1);
 
-            // Parent 2 Nature
-            this.cmbNatureP2 = new System.Windows.Forms.ComboBox();
-            this.cmbNatureP2.Location = new System.Drawing.Point(180, 540);
-            object[] natureArray = new object[this.cmbNatureP1.Items.Count];
-            this.cmbNatureP1.Items.CopyTo(natureArray, 0);
-            this.cmbNatureP2.Items.AddRange(natureArray);
-            this.Controls.Add(this.cmbNatureP2);
+            this.cmbNatureP1.Location = new System.Drawing.Point(90, 635);
 
-            // Parent 1 Ability
-            this.cmbAbilityP1 = new System.Windows.Forms.ComboBox();
-            this.cmbAbilityP1.Location = new System.Drawing.Point(20, 580);
-            this.cmbAbilityP1.Items.AddRange(new string[] { "Ability 1", "Ability 2", "Hidden Ability" });
-            this.Controls.Add(this.cmbAbilityP1);
+            Label lblNatureP2 = new Label();
+            lblNatureP2.Text = "Nature P2:";
+            lblNatureP2.Location = new System.Drawing.Point(200, 640);
+            this.Controls.Add(lblNatureP2);
 
-            // Parent 2 Ability
-            this.cmbAbilityP2 = new System.Windows.Forms.ComboBox();
-            this.cmbAbilityP2.Location = new System.Drawing.Point(180, 580);
-            this.cmbAbilityP2.Items.AddRange(new string[] { "Ability 1", "Ability 2", "Hidden Ability" });
-            this.Controls.Add(this.cmbAbilityP2);
+            this.cmbNatureP2.Location = new System.Drawing.Point(270, 635);
 
+            // Ability Labels and ComboBoxes
+            Label lblAbilityP1 = new Label();
+            lblAbilityP1.Text = "Ability P1:";
+            lblAbilityP1.Location = new System.Drawing.Point(20, 670);
+            this.Controls.Add(lblAbilityP1);
+
+            this.cmbAbilityP1.Location = new System.Drawing.Point(90, 665);
+
+            Label lblAbilityP2 = new Label();
+            lblAbilityP2.Text = "Ability P2:";
+            lblAbilityP2.Location = new System.Drawing.Point(200, 670);
+            this.Controls.Add(lblAbilityP2);
+
+            this.cmbAbilityP2.Location = new System.Drawing.Point(270, 665);
 
             // Form Settings
-            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.ClientSize = new System.Drawing.Size(900, 750);
             this.Controls.Add(this.txtTSV);
             this.Controls.Add(this.chkShinyCharm);
             this.Controls.Add(this.chkMasuda);
