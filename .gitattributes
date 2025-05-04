@@ -1,0 +1,14 @@
+# Ensure consistent line endings
+*.cs text eol=crlf
+*.designer.cs text eol=crlf
+*.config text eol=crlf
+*.md text eol=lf
+
+# Optional: treat all text files as text (useful if you have mixed text files)
+* text=auto
+
+# Exclude binaries from text normalization
+*.png binary
+*.jpg binary
+*.exe binary
+*.dll binary
