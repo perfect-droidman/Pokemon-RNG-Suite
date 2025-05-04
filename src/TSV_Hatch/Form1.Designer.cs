@@ -158,6 +158,8 @@ namespace TSV_Hatch
 
             string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
 
+            this.p1IVs = new NumericUpDown[6];
+
             for (int i = 0; i < 6; i++)
             {
                 Label statLabel = new Label();
@@ -166,6 +168,7 @@ namespace TSV_Hatch
                 this.Controls.Add(statLabel);
 
                 // 🔥 Instantiate NumericUpDown before using it!
+                this.p1IVs = new NumericUpDown[6];
                 this.p1IVs[i] = new NumericUpDown();
                 this.p1IVs[i].Minimum = 0;
                 this.p1IVs[i].Maximum = 31;
@@ -178,6 +181,7 @@ namespace TSV_Hatch
             lblP2.Text = "Parent 2 IVs:";
             lblP2.Location = new System.Drawing.Point(200, 460);
             this.Controls.Add(lblP2);
+            this.p2IVs = new NumericUpDown[6];
 
             for (int i = 0; i < 6; i++)
             {
@@ -188,6 +192,7 @@ namespace TSV_Hatch
 
                 // 🔥 Instantiate NumericUpDown before using it!
                 this.p2IVs[i] = new NumericUpDown();
+                this.p2IVs = new NumericUpDown[6];
                 this.p2IVs[i].Minimum = 0;
                 this.p2IVs[i].Maximum = 31;
                 this.p2IVs[i].Location = new System.Drawing.Point(250, 485 + i * 25);
