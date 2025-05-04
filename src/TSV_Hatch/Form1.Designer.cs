@@ -200,7 +200,9 @@ namespace TSV_Hatch
             // Parent 2 Nature
             this.cmbNatureP2 = new System.Windows.Forms.ComboBox();
             this.cmbNatureP2.Location = new System.Drawing.Point(180, 460);
-            this.cmbNatureP2.Items.AddRange(this.cmbNatureP1.Items);
+            object[] natureArray = new object[this.cmbNatureP1.Items.Count];
+            this.cmbNatureP1.Items.CopyTo(natureArray, 0);
+            this.cmbNatureP2.Items.AddRange(natureArray);
             this.Controls.Add(this.cmbNatureP2);
 
             // Parent 1 Ability
