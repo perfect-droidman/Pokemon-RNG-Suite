@@ -171,8 +171,8 @@ namespace TSV_Hatch
                 this.p1IVs[i] = new NumericUpDown();
                 this.p1IVs[i].Minimum = 0;
                 this.p1IVs[i].Maximum = 31;
-                this.p1IVs[i].Size = new System.Drawing.Size(120, 20); // Narrow width
-                this.p1IVs[i].Location = new System.Drawing.Point(70, 485 + i * 25);
+                this.p1IVs[i].Size = new System.Drawing.Size(50, 20);  // Slightly wider
+                this.p1IVs[i].Location = new System.Drawing.Point(90, 485 + i * 25);  // More gap from label
                 this.Controls.Add(this.p1IVs[i]);
             }
 
@@ -195,20 +195,22 @@ namespace TSV_Hatch
                 this.p2IVs[i] = new NumericUpDown();
                 this.p2IVs[i].Minimum = 0;
                 this.p2IVs[i].Maximum = 31;
-                this.p2IVs[i].Size = new System.Drawing.Size(120, 20);
-                this.p2IVs[i].Location = new System.Drawing.Point(250, 485 + i * 25);
+                this.p2IVs[i].Size = new System.Drawing.Size(50, 20);
+                this.p2IVs[i].Location = new System.Drawing.Point(270, 485 + i * 25);  // Spaced further from label
                 this.Controls.Add(this.p2IVs[i]);
             }
 
             // ====== Nature and Ability ComboBoxes ======
 
-            // Instantiate the ComboBoxes
+            // ====== Instantiate ComboBoxes ======
+
             this.cmbNatureP1 = new ComboBox();
             this.cmbNatureP2 = new ComboBox();
             this.cmbAbilityP1 = new ComboBox();
             this.cmbAbilityP2 = new ComboBox();
 
-            // Nature Labels
+            // ====== Nature Labels ======
+
             Label lblNatureP1 = new Label();
             lblNatureP1.Text = "Nature P1:";
             lblNatureP1.Location = new System.Drawing.Point(20, 640);
@@ -219,26 +221,30 @@ namespace TSV_Hatch
             lblNatureP2.Location = new System.Drawing.Point(200, 640);
             this.Controls.Add(lblNatureP2);
 
-            // Nature ComboBoxes
+            // ====== Nature ComboBoxes ======
+
             this.cmbNatureP1.Location = new System.Drawing.Point(90, 635);
             this.cmbNatureP2.Location = new System.Drawing.Point(270, 635);
 
+            this.cmbNatureP1.Size = new System.Drawing.Size(120, 20);
+            this.cmbNatureP2.Size = new System.Drawing.Size(120, 20);
+
             string[] natures = new string[] {
-                "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
-                "Bold", "Docile", "Relaxed", "Impish", "Lax",
-                "Timid", "Hasty", "Serious", "Jolly", "Naive",
-                "Modest", "Mild", "Quiet", "Bashful", "Rash",
-                "Calm", "Gentle", "Sassy", "Careful", "Quirky"
-            };
+    "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
+    "Bold", "Docile", "Relaxed", "Impish", "Lax",
+    "Timid", "Hasty", "Serious", "Jolly", "Naive",
+    "Modest", "Mild", "Quiet", "Bashful", "Rash",
+    "Calm", "Gentle", "Sassy", "Careful", "Quirky"
+};
 
             this.cmbNatureP1.Items.AddRange(natures);
             this.cmbNatureP2.Items.AddRange(natures);
 
-            // Add Nature ComboBoxes to form
             this.Controls.Add(this.cmbNatureP1);
             this.Controls.Add(this.cmbNatureP2);
 
-            // Ability Labels
+            // ====== Ability Labels ======
+
             Label lblAbilityP1 = new Label();
             lblAbilityP1.Text = "Ability P1:";
             lblAbilityP1.Location = new System.Drawing.Point(20, 670);
@@ -249,16 +255,19 @@ namespace TSV_Hatch
             lblAbilityP2.Location = new System.Drawing.Point(200, 670);
             this.Controls.Add(lblAbilityP2);
 
-            // Ability ComboBoxes
+            // ====== Ability ComboBoxes ======
+
             this.cmbAbilityP1.Location = new System.Drawing.Point(90, 665);
             this.cmbAbilityP2.Location = new System.Drawing.Point(270, 665);
+
+            this.cmbAbilityP1.Size = new System.Drawing.Size(120, 20);
+            this.cmbAbilityP2.Size = new System.Drawing.Size(120, 20);
 
             string[] abilities = new string[] { "Ability 1", "Ability 2", "Hidden Ability" };
 
             this.cmbAbilityP1.Items.AddRange(abilities);
             this.cmbAbilityP2.Items.AddRange(abilities);
 
-            // Add Ability ComboBoxes to form
             this.Controls.Add(this.cmbAbilityP1);
             this.Controls.Add(this.cmbAbilityP2);
 
