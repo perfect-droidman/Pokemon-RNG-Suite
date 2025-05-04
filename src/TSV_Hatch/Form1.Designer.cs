@@ -165,14 +165,15 @@ namespace TSV_Hatch
             {
                 Label statLabel = new Label();
                 statLabel.Text = stats[i];
+                statLabel.Font = new Font("Segoe UI", 8F, FontStyle.Regular);  // Smaller font
                 statLabel.Location = new System.Drawing.Point(20, 485 + i * 25);
                 this.Controls.Add(statLabel);
 
                 this.p1IVs[i] = new NumericUpDown();
                 this.p1IVs[i].Minimum = 0;
                 this.p1IVs[i].Maximum = 31;
-                this.p1IVs[i].Size = new System.Drawing.Size(50, 20);  // Slightly wider
-                this.p1IVs[i].Location = new System.Drawing.Point(90, 485 + i * 25);  // More gap from label
+                this.p1IVs[i].Size = new System.Drawing.Size(60, 20);  // Wider so values are visible
+                this.p1IVs[i].Location = new System.Drawing.Point(100, 485 + i * 25);  // More gap from label
                 this.Controls.Add(this.p1IVs[i]);
             }
 
@@ -180,7 +181,7 @@ namespace TSV_Hatch
 
             Label lblP2 = new Label();
             lblP2.Text = "Parent 2 IVs:";
-            lblP2.Location = new System.Drawing.Point(200, 460);
+            lblP2.Location = new System.Drawing.Point(220, 460);
             this.Controls.Add(lblP2);
 
             this.p2IVs = new NumericUpDown[6];
@@ -189,21 +190,22 @@ namespace TSV_Hatch
             {
                 Label statLabel = new Label();
                 statLabel.Text = stats[i];
-                statLabel.Location = new System.Drawing.Point(200, 485 + i * 25);
+                statLabel.Font = new Font("Segoe UI", 8F, FontStyle.Regular);  // Smaller font
+                statLabel.Location = new System.Drawing.Point(220, 485 + i * 25);
                 this.Controls.Add(statLabel);
 
                 this.p2IVs[i] = new NumericUpDown();
                 this.p2IVs[i].Minimum = 0;
                 this.p2IVs[i].Maximum = 31;
-                this.p2IVs[i].Size = new System.Drawing.Size(50, 20);
-                this.p2IVs[i].Location = new System.Drawing.Point(270, 485 + i * 25);  // Spaced further from label
+                this.p2IVs[i].Size = new System.Drawing.Size(60, 20);
+                this.p2IVs[i].Location = new System.Drawing.Point(300, 485 + i * 25);
                 this.Controls.Add(this.p2IVs[i]);
             }
 
+
             // ====== Nature and Ability ComboBoxes ======
 
-            // ====== Instantiate ComboBoxes ======
-
+            // Instantiate ComboBoxes
             this.cmbNatureP1 = new ComboBox();
             this.cmbNatureP2 = new ComboBox();
             this.cmbAbilityP1 = new ComboBox();
@@ -213,29 +215,29 @@ namespace TSV_Hatch
 
             Label lblNatureP1 = new Label();
             lblNatureP1.Text = "Nature P1:";
+            lblNatureP1.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
             lblNatureP1.Location = new System.Drawing.Point(20, 640);
             this.Controls.Add(lblNatureP1);
 
             Label lblNatureP2 = new Label();
             lblNatureP2.Text = "Nature P2:";
-            lblNatureP2.Location = new System.Drawing.Point(200, 640);
+            lblNatureP2.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
+            lblNatureP2.Location = new System.Drawing.Point(220, 640);
             this.Controls.Add(lblNatureP2);
 
-            // ====== Nature ComboBoxes ======
-
-            this.cmbNatureP1.Location = new System.Drawing.Point(90, 635);
-            this.cmbNatureP2.Location = new System.Drawing.Point(270, 635);
-
-            this.cmbNatureP1.Size = new System.Drawing.Size(120, 20);
-            this.cmbNatureP2.Size = new System.Drawing.Size(120, 20);
+            // Nature ComboBoxes
+            this.cmbNatureP1.Location = new System.Drawing.Point(100, 635);
+            this.cmbNatureP2.Location = new System.Drawing.Point(300, 635);
+            this.cmbNatureP1.Size = new System.Drawing.Size(140, 25);
+            this.cmbNatureP2.Size = new System.Drawing.Size(140, 25);
 
             string[] natures = new string[] {
-    "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
-    "Bold", "Docile", "Relaxed", "Impish", "Lax",
-    "Timid", "Hasty", "Serious", "Jolly", "Naive",
-    "Modest", "Mild", "Quiet", "Bashful", "Rash",
-    "Calm", "Gentle", "Sassy", "Careful", "Quirky"
-};
+                "Hardy", "Lonely", "Brave", "Adamant", "Naughty",
+                "Bold", "Docile", "Relaxed", "Impish", "Lax",
+                "Timid", "Hasty", "Serious", "Jolly", "Naive",
+                "Modest", "Mild", "Quiet", "Bashful", "Rash",
+                "Calm", "Gentle", "Sassy", "Careful", "Quirky"
+            };
 
             this.cmbNatureP1.Items.AddRange(natures);
             this.cmbNatureP2.Items.AddRange(natures);
@@ -247,21 +249,21 @@ namespace TSV_Hatch
 
             Label lblAbilityP1 = new Label();
             lblAbilityP1.Text = "Ability P1:";
+            lblAbilityP1.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
             lblAbilityP1.Location = new System.Drawing.Point(20, 670);
             this.Controls.Add(lblAbilityP1);
 
             Label lblAbilityP2 = new Label();
             lblAbilityP2.Text = "Ability P2:";
-            lblAbilityP2.Location = new System.Drawing.Point(200, 670);
+            lblAbilityP2.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
+            lblAbilityP2.Location = new System.Drawing.Point(220, 670);
             this.Controls.Add(lblAbilityP2);
 
-            // ====== Ability ComboBoxes ======
-
-            this.cmbAbilityP1.Location = new System.Drawing.Point(90, 665);
-            this.cmbAbilityP2.Location = new System.Drawing.Point(270, 665);
-
-            this.cmbAbilityP1.Size = new System.Drawing.Size(120, 20);
-            this.cmbAbilityP2.Size = new System.Drawing.Size(120, 20);
+            // Ability ComboBoxes
+            this.cmbAbilityP1.Location = new System.Drawing.Point(100, 665);
+            this.cmbAbilityP2.Location = new System.Drawing.Point(300, 665);
+            this.cmbAbilityP1.Size = new System.Drawing.Size(140, 25);
+            this.cmbAbilityP2.Size = new System.Drawing.Size(140, 25);
 
             string[] abilities = new string[] { "Ability 1", "Ability 2", "Hidden Ability" };
 
@@ -270,6 +272,7 @@ namespace TSV_Hatch
 
             this.Controls.Add(this.cmbAbilityP1);
             this.Controls.Add(this.cmbAbilityP2);
+
 
             // Form Settings
             this.ClientSize = new System.Drawing.Size(900, 750);
