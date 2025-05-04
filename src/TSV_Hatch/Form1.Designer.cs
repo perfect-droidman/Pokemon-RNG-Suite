@@ -157,6 +157,7 @@ namespace TSV_Hatch
             this.Controls.Add(lblP1);
 
             string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
+
             for (int i = 0; i < 6; i++)
             {
                 Label statLabel = new Label();
@@ -164,6 +165,7 @@ namespace TSV_Hatch
                 statLabel.Location = new System.Drawing.Point(20, 485 + i * 25);
                 this.Controls.Add(statLabel);
 
+                // 🔥 Instantiate NumericUpDown before using it!
                 this.p1IVs[i] = new NumericUpDown();
                 this.p1IVs[i].Minimum = 0;
                 this.p1IVs[i].Maximum = 31;
@@ -184,13 +186,13 @@ namespace TSV_Hatch
                 statLabel.Location = new System.Drawing.Point(200, 485 + i * 25);
                 this.Controls.Add(statLabel);
 
+                // 🔥 Instantiate NumericUpDown before using it!
                 this.p2IVs[i] = new NumericUpDown();
                 this.p2IVs[i].Minimum = 0;
                 this.p2IVs[i].Maximum = 31;
                 this.p2IVs[i].Location = new System.Drawing.Point(250, 485 + i * 25);
                 this.Controls.Add(this.p2IVs[i]);
             }
-
 
             // Parent 1 Nature
             // Nature Labels and ComboBoxes
