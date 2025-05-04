@@ -1,3 +1,9 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms; // ⬅ this line is likely missing!
+
 namespace TSV_Hatch
 {
     partial class Form1
@@ -225,7 +231,7 @@ namespace TSV_Hatch
             this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnPlus100);
             this.Controls.Add(this.btnMinus100);
-            this.Text = "Pok�mon RNG Suite � TSV Hatch Simulator";
+            this.Text = "Pokémon RNG Suite — TSV Hatch Simulator";
 
             
 
