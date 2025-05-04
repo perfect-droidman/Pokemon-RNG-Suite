@@ -99,7 +99,7 @@ namespace TSV_Hatch
 
             // Data Grid View for Frames
             this.dgvFrames.Location = new System.Drawing.Point(20, 100);
-            this.dgvFrames.Size = new System.Drawing.Size(740, 250);
+            this.dgvFrames.Size = new System.Drawing.Size(740, 300);
             this.dgvFrames.ColumnCount = 7;
             this.dgvFrames.Columns[0].Name = "Frame";
             this.dgvFrames.Columns[1].Name = "ESV";
