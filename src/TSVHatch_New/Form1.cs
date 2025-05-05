@@ -1,21 +1,59 @@
-
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TSV_Hatch
 {
     public partial class Form1 : Form
     {
-        private FrameGenerator frameGen;
+        private FrameGenerator? frameGen;
         private int currentFrame;
         private readonly string[] stats = { "HP", "Atk", "Def", "SpA", "SpD", "Spe" };
+
+        // IV control arrays
+        private NumericUpDown[] p1IVs;
+        private NumericUpDown[] p2IVs;
 
         public Form1()
         {
             InitializeComponent();
             frameGen = null;
             currentFrame = 0;
+
+            // ===== Create Parent IV controls =====
+
+            // Initialize arrays
+            this.p1IVs = new NumericUpDown[6];
+            this.p2IVs = new NumericUpDown[6];
+
+            // Add controls dynamically
+            for (int i = 0; i < 6; i++)
+            {
+                // --- Label for stats (left side for P1) ---
+                Label statLabel = new Label();
+                statLabel.Text = stats[i];
+                statLabel.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
+                statLabel.Location = new Point(20, 485 + i * 25); // Adjust spacing as needed
+                statLabel.AutoSize = true;
+                this.Controls.Add(statLabel);
+
+                // --- Parent 1 IVs ---
+                this.p1IVs[i] = new NumericUpDown();
+                this.p1IVs[i].Minimum = 0;
+                this.p1IVs[i].Maximum = 31;
+                this.p1IVs[i].Size = new Size(60, 20);
+                this.p1IVs[i].Location = new Point(100, 485 + i * 25);
+                this.Controls.Add(this.p1IVs[i]);
+
+                // --- Parent 2 IVs ---
+                this.p2IVs[i] = new NumericUpDown();
+                this.p2IVs[i].Minimum = 0;
+                this.p2IVs[i].Maximum = 31;
+                this.p2IVs[i].Size = new Size(60, 20);
+                this.p2IVs[i].Location = new Point(200, 485 + i * 25);
+                this.Controls.Add(this.p2IVs[i]);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -122,6 +160,7 @@ namespace TSV_Hatch
                 );
             }
         }
+
         private void btnAccept_Click(object sender, EventArgs e)
         {
             // TODO: Implement frame accept logic
@@ -140,6 +179,11 @@ namespace TSV_Hatch
         private void btnMinus100_Click(object sender, EventArgs e)
         {
             // TODO: Implement -100 frame shift
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
